@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>練習</title>
+        <h:outputStylesheet name="mystyle.css" library="css"/>
+    </h:head>
+    <h:body>
+        <h1>登録フォーム</h1>
+        <h:form>
+            <h:panelGrid columns="2" cellspacing="0" cellpadding="0" columnClasses="c10,c20" rowClasses="row_odd, row_even">
+                お名前
+                <h:panelGroup>
+                    <h:inputText id="name" value="#{bb.name}" required="true" requiredMessage="★必須" size="10"  styleClass="tx"/>
+                    <h:message for="name" styleClass="errors"/>
+                </h:panelGroup>
+                生年
+                <h:panelGroup>
+                    <h:selectOneListbox id="year" value="#{bb.year}" size="4" required="true" requiredMessage="★必須" styleClass="sel">
+                        <f:selectItems value="#{bb.yearItems}" />
+                    </h:selectOneListbox>
+                    <h:message for="year" styleClass="errors"/>
+                </h:panelGroup>
+                性別
+                <h:panelGroup>
+                    <h:selectOneRadio id="sex" value="#{bb.sex}" required="true" requiredMessage="★必須" styleClass="inp">
+                        <f:selectItems value="#{bb.sexItems}" />
+                    </h:selectOneRadio>
+                    <h:message for="sex" styleClass="errors"/>
+                </h:panelGroup>
+                お住まいの地域
+                <h:selectOneMenu value="#{bb.region}" styleClass="sel">
+                    <f:selectItems value="#{bb.regionItems}" />
+                </h:selectOneMenu>
+                関心のある分野（複数選択可）
+                <h:panelGroup>
+                    <h:selectManyCheckbox id="interest" value="#{bb.interest}" required="true" requiredMessage="★必須" styleClass="inp">
+                        <f:selectItems value="#{bb.interestItems}" />
+                    </h:selectManyCheckbox>
+                    <h:message for="interest" styleClass="errors"/>
+                </h:panelGroup>
+            </h:panelGrid>
+            <p><h:selectBooleanCheckbox value="#{bb.magazine}" styleClass="inp" />メルマガを受け取る</p>
+            <h:commandButton value="送　信"  action="#{bb.next()}" styleClass="btn"/>
+        </h:form>
+    </h:body>
+</html>
+
