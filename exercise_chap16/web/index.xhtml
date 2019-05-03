@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>exercise_chap16</title>
+        <h:outputStylesheet name="mystyle.css" library="css" />
+    </h:head>
+    <h:body>
+        <h:form>
+            <h1>データベースの中のテキストを編集</h1>
+            <h:panelGrid columns="2">
+                題名：<h:outputText value="#{bb.title}"/>
+                著者：<h:outputText value="#{bb.author}"/>
+                日付：<h:outputText value="#{bb.pdate.getTime()}">
+                    <f:convertDateTime pattern="yyyy/M/d"/>
+                </h:outputText>
+            </h:panelGrid>
+            <h:panelGrid columns="1">
+                <h:inputTextarea value="#{bb.text}" cols="60" rows="25"/>
+                <h:commandButton action="#{bb.save()}" value="変更を保存">
+                    <f:ajax execute="@all"/>
+                </h:commandButton>
+            </h:panelGrid>
+        </h:form>
+    </h:body>
+</html>
+
