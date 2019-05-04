@@ -1,0 +1,30 @@
+body {
+    font-family: メイリオ ,Osaka;
+    font-size: 12pt;
+    margin: 10px 10px 10px 20px;	/* 上、右、下、左の順でマージンを指定 */
+    line-height: 1.4em;
+}
+h1 {
+    font-size: 1.2em;
+}
+.error{
+    font-size: 0.7em;
+}
+.c1	{/* １列目 */
+    width: 80px;				/* 横幅を80pxに */
+    vertical-align: top;			/* 上端に揃える */
+}
+.c2	{/* ２列目 */
+    width: 100px;				/* 横幅を300pxに */
+    vertical-align: top;			/* 上端に揃える */
+}
+.c3	{/* ３列目 */
+    width: 100px;				/* 横幅を300pxに */
+    vertical-align: top;			/* 上端に揃える */
+}
+.c20	{/* ２列めの中の１列目 */
+    width: 100px;				/* 横幅を100pxに */
+    vertical-align: top;			/* 上端に揃える */
+    padding-left: 5px;			/* 左端に5pxの余白 */
+}
+

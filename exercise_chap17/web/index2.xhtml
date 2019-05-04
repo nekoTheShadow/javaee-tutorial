@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>exercise_chap17</title>
+        <h:outputStylesheet name="mystyle.css" library="css" />
+    </h:head>
+    <h:body>
+        <h3>交通費と社員一覧</h3>
+        <h:form>
+            <h:dataTable value="#{bb.allCommute}" var="v" columnClasses="c1,c2,c3" >
+                <h:column>#{v.tid}</h:column>
+                <h:column>#{v.allowance}</h:column>
+                <h:column>
+                    <h:dataTable value="#{v.employees}" var="ve" columnClasses="c20" >
+                        <h:column>#{ve.name}</h:column>
+                    </h:dataTable>
+                </h:column>
+            </h:dataTable>
+            <h:link outcome="index" >戻る</h:link>
+        </h:form>
+    </h:body>
+</html>
